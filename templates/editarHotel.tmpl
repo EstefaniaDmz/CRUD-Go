@@ -1,0 +1,40 @@
+{{ define "editarHotel" }}
+{{ template "head" }}
+<br>
+<h1 style="text-align: center;">Formulario para editar</h1>
+<br>
+<form action="/updateHotel?id={{.IdHotel}}" method="post" class="form-label" style="margin-left: 5%; margin-right: 5%;">
+    <input type="hidden" name="idHotel" value="{{ .IdHotel }}">
+    <h5>Nombre</h5>
+    <input class="form-control" type="text" name="nombre" value="{{ .Nombre }}">
+    <br>
+    <h5>Teléfono</h5>
+    <input class="form-control" type="number" name="telefono" min="1" maxlength="10" value="{{ .Telefono }}">
+    <br>
+    <h5>Calle</h5>
+    <input class="form-control" type="text" name="calle" value="{{ .Calle }}">
+    <br>
+    <h5>Colonia</h5>
+    <input class="form-control" type="text" name="colonia" value="{{ .Colonia }}">
+    <br>
+    <h5>CP</h5>
+    <input class="form-control" type="text" name="cp" maxlength="5" value="{{ .Cp }}">
+    <br>
+    <h5>Ciudad</h5>
+    <input class="form-control" type="text" name="ciudad" value="{{ .Ciudad }}">
+    <br>
+    <h5>Estado</h5>
+    <input class="form-control" type="text" name="estado" value="{{ .Estado }}">
+    <br>
+    <h5>País</h5>
+    <input class="form-control" type="text" name="pais" value="{{ .Pais }}">
+    <br>
+    <h5>Número plazas</h5>
+    <input class="form-control" type="number" name="numeroPlazas" min="0" value="{{ .NumeroPlazas }}">
+    <br>
+    <div class="d-grid gap-2">
+        <input class="btn btn-outline-primary" type="submit" value="Aceptar">
+    </div>
+</form>
+{{ template "foot" }}
+{{ end }}

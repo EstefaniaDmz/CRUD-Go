@@ -1,0 +1,39 @@
+{{define "createVuelo"}}
+{{ template "head" }}
+<br>
+<h1 style="text-align: center;">Formulario para agregar</h1>
+<br>
+<form action="/insertVuelo" method="post" class="form-label" style="margin-left: 5%; margin-right: 5%;">
+    <h5>Fecha</h5>
+    <input class="form-control" type="text" name="fecha">
+    <br>
+    <h5>Hora</h5>
+    <input class="form-control" type="text" name="hora">
+    <br>
+    <h5>Ciudad origen</h5>
+    <input class="form-control" type="text" name="ciudadOrigen">
+    <br>
+    <h5>Estado origen</h5>
+    <input class="form-control" type="text" name="estadoOrigen">
+    <br>
+    <h5>País origen</h5>
+    <input class="form-control" type="text" name="paisOrigen">
+    <br>
+    <h5>Ciudad destino</h5>
+    <input class="form-control" type="text" name="ciudadDestino">
+    <br>
+    <h5>Estado destino</h5>
+    <input class="form-control" type="text" name="estadoDestino">
+    <br>
+    <h5>País destino</h5>
+    <input class="form-control" type="text" name="paisDestino">
+    <br>
+    <h5>Número plazas</h5>
+    <input class="form-control" type="number" name="plazasTotales" min="0">
+    <br>
+    <div class="d-grid gap-2">
+        <input class="btn btn-outline-primary" type="submit" value="Aceptar">
+    </div>
+</form>
+{{template "foot"}}
+{{end}}

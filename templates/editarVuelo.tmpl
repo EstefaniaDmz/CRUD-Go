@@ -1,0 +1,40 @@
+{{ define "editarVuelo" }}
+{{ template "head" }}
+<br>
+<h1 style="text-align: center;">Formulario para editar</h1>
+<br>
+<form action="/updateVuelo" method="post" class="form-label" style="margin-left: 5%; margin-right: 5%;">
+    <input type="hidden" name="idVuelo" value="{{.IdVuelo}}">
+    <h5>Fecha</h5>
+    <input class="form-control" type="text" name="fecha" value="{{ .Fecha }}">
+    <br>
+    <h5>Hora</h5>
+    <input class="form-control" type="text" name="hora" value="{{ .Hora }}">
+    <br>
+    <h5>Ciudad origen</h5>
+    <input class="form-control" type="text" name="ciudadOrigen" value="{{ .CiudadOrigen }}">
+    <br>
+    <h5>Estado origen</h5>
+    <input class="form-control" type="text" name="estadoOrigen" value="{{ .EstadoOrigen }}">
+    <br>
+    <h5>País origen</h5>
+    <input class="form-control" type="text" name="paisOrigen" value="{{ .PaisOrigen }}">
+    <br>
+    <h5>Ciudad destino</h5>
+    <input class="form-control" type="text" name="ciudadDestino" value="{{ .CiudadDestino }}">
+    <br>
+    <h5>Estado destino</h5>
+    <input class="form-control" type="text" name="estadoDestino" value="{{ .EstadoDestino }}">
+    <br>
+    <h5>País destino</h5>
+    <input class="form-control" type="text" name="paisDestino" value="{{ .PaisDestino }}">
+    <br>
+    <h5>Número plazas</h5>
+    <input class="form-control" type="number" name="plazasTotales" min="0" value="{{ .PlazasTotales }}">
+    <br>
+    <div class="d-grid gap-2">
+        <input class="btn btn-outline-primary" type="submit" value="Aceptar">
+    </div>
+</form>
+{{ template "foot" }}
+{{ end }}

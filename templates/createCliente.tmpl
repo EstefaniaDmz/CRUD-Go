@@ -1,0 +1,48 @@
+{{ define "createCliente" }}
+{{ template "head" }}
+<br>
+<h1 style="text-align: center;">Formulario para agregar</h1>
+<br>
+<form action="/insertCliente" method="post" class="form-label" style="margin-left: 5%; margin-right: 5%;">
+    <h5>Nombre</h5>
+    <input class="form-control" type="text" name="nombre">
+    <br>
+    <h5>Apellido Paterno</h5>
+    <input class="form-control" type="text" name="apellidoPaterno">
+    <br>
+    <h5>Apellido Materno</h5>
+    <input class="form-control" type="text" name="apellidoMaterno">
+    <br>
+    <h5>Teléfono</h5>
+    <input class="form-control" type="number" name="telefono" min="1" maxlength="10">
+    <br>
+    <h5>Calle</h5>
+    <input class="form-control" type="text" name="calle">
+    <br>
+    <h5>Colonia</h5>
+    <input class="form-control" type="text" name="colonia">
+    <br>
+    <h5>CP</h5>
+    <input class="form-control" type="text" name="cp" maxlength="5">
+    <br>
+    <h5>Id Hotel</h5>
+    <input class="form-control" type="number" min="1" name="idHotel">
+    <br>
+    <h5>Régimen hotel</h5>
+    <input class="form-control" type="text" name="regimenHotel">
+    <br>
+    <h5>Id Sucursal</h5>
+    <input class="form-control" type="number" min="1" name="idSucursal"">
+    <br>
+    <h5>Id Vuelo</h5>
+    <input class="form-control" type="number" min="1" name="idVuelo"">
+    <br>
+    <h5>Clase Vuelo</h5>
+    <input class="form-control" type="text" name="claseVuelo"">
+    <br>
+    <div class="d-grid gap-2">
+        <input class="btn btn-outline-primary" type="submit" value="Aceptar">
+    </div>
+</form>
+{{ template "foot" }}
+{{ end }}

@@ -1,0 +1,46 @@
+{{define "indexVuelo"}}
+{{template "head"}}
+<br>
+<h1 style="text-align: center;">Vuelo   <a class="btn btn-outline-success btn-sm" href="/createVuelo">Agregar</a></h1>
+    <br>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered" style="vertical-align: middle; text-align: center;">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Hora</th>
+            <th scope="col">Num. Plazas</th>
+            <th scope="col">Ciudad Origen</th>
+            <th scope="col">Estado Origen</th>
+            <th scope="col">País Origen</th>
+            <th scope="col">Ciudad Destino</th>
+            <th scope="col">Estado Destino</th>
+            <th scope="col">País Destino</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range.}}
+          <tr class="">
+            <td>{{ .IdVuelo }}</td>
+            <td>{{ .Fecha }}</td>
+            <td>{{ .Hora }}</td>
+            <td>{{ .PlazasTotales }}</td>
+            <td>{{ .CiudadOrigen }}</td>
+            <td>{{ .EstadoOrigen }}</td>
+            <td>{{ .PaisOrigen }}</td>
+            <td>{{ .CiudadDestino }}</td>
+            <td>{{ .EstadoDestino }}</td>
+            <td>{{ .PaisDestino }}</td>
+            <td>
+              <a class="btn btn-outline-warning btn-sm" href="/editarVuelo?id={{ .IdVuelo }}">Editar</a>
+              <a class="btn btn-outline-danger btn-sm" href="/eliminarVuelo?id={{.IdVuelo }}">Borrar</a>
+            </td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+{{template "foot"}}
+{{end}}

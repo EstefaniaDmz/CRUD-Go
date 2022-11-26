@@ -1,0 +1,40 @@
+{{define "indexSucursal"}}
+{{template "head"}}
+<br>
+<h1 style="text-align: center;">Sucursal   <a class="btn btn-outline-success btn-sm" href="/createSucursal">Agregar</a></h1>
+    <br>
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered" style="vertical-align: middle; text-align: center;">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Num. Plazas</th>
+            <th scope="col">Calle</th>
+            <th scope="col">Colonia</th>
+            <th scope="col">CP</th>
+            <th scope="col">Opciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{ range.}}
+          <tr class="">
+            <td>{{ .IdSucursal }}</td>
+            <td>{{ .Nombre }}</td>
+            <td>{{ .Telefono }}</td>
+            <td>{{ .NumeroPlazas }}</td>
+            <td>{{ .Calle }}</td>
+            <td>{{ .Colonia }}</td>
+            <td>{{ .Cp }}</td>
+            <td>
+              <a class="btn btn-outline-warning btn-sm" href="/editarSucursal?id={{ .IdSucursal }}">Editar</a>
+              <a class="btn btn-outline-danger btn-sm" href="/eliminarSucursal?id={{ .IdSucursal }}">Borrar</a>
+            </td>
+          </tr>
+          {{ end }}
+        </tbody>
+      </table>
+    </div>
+    {{template "foot"}}
+{{end}}
